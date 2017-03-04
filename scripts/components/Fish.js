@@ -3,13 +3,15 @@
 */
 import React from 'react';
 import helpers from '../helpers';
+import autobind from 'autobind-decorator';
 
-const Fish = React.createClass({
-  onButtonClick : function() {
+@autobind
+class Fish extends React.Component {
+  onButtonClick() {
     this.props.addToOrder(this.props.index);
-  },
+  };
 
-  render : function() {
+  render() {
     let details = this.props.details;
     let isAvailable = (details.status === 'available' ? true : false);
     let buttonText = (isAvailable ? 'Add To Order' : 'Sold Out');
@@ -30,7 +32,7 @@ const Fish = React.createClass({
         </button>
       </li>
     )
-  }
-});
+  };
+};
 
 export default Fish;
