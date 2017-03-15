@@ -106,6 +106,7 @@ class App extends React.Component {
           loadSamples={this.loadSamples}
           fishes={this.state.fishes}
           linkState={this.linkState.bind(this)}
+          {...this.props}
         />    
       </div>
     )
